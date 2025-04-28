@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tamweely_task.iml" filepath="$PROJECT_DIR$/tamweely_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/tamweely_task_android.iml" filepath="$PROJECT_DIR$/android/tamweely_task_android.iml" />
+    </modules>
+  </component>
+</project>
