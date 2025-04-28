@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/routes/app_router.dart';
+
 class Tamweely extends StatelessWidget {
   const Tamweely({super.key});
 
@@ -7,6 +9,8 @@ class Tamweely extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: AppRouter.splashScreen,
+      onGenerateRoute: AppRouter.generateRoute,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),

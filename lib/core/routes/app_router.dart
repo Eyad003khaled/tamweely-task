@@ -2,17 +2,18 @@
 
 import 'package:flutter/material.dart';
 
-
+import '../../features/splash/presentation/screens/splash_screen.dart';
+import '../functions/animations/animation.dart';
 
 class AppRouter {
-
-
+  // Route names
+  static const String splashScreen = '/splash';
 
   // Generate routes
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-
-
+      case splashScreen:
+        return fadeRoute(const SplashScreen());
 
       // case homeScreen:
       //   return fadeRoute(  const HomeScreen());
@@ -27,6 +28,4 @@ class AppRouter {
         );
     }
   }
-
-
 }
