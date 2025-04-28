@@ -1,4 +1,4 @@
-package com.example.tamweely_task
+package com.tamweely.task
 
 import io.flutter.embedding.android.FlutterActivity
 
