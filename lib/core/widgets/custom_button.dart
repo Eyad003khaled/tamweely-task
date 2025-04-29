@@ -42,12 +42,7 @@ class CustomButton extends StatelessWidget {
             ? const CircularProgressIndicator(
                 color: Colors.white,
               )
-            : Padding(
-                padding: const EdgeInsets.only(
-                  left: 35.0,
-                  right: 35.0,
-                ),
-                child: Row(
+            :  Row(
                   mainAxisAlignment: icon != null
                       ? MainAxisAlignment.spaceBetween
                       : MainAxisAlignment.center,
@@ -70,7 +65,7 @@ class CustomButton extends StatelessWidget {
                   ],
                 ),
               ),
-      ),
+    
     );
   }
 }

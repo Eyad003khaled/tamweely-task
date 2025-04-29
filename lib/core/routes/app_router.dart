@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tamweely_task/features/contact_us/presentation/screens/contact_us_screen.dart';
+import 'package:tamweely_task/features/products/presentation/screens/products_Screen.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
@@ -12,6 +13,7 @@ class AppRouter {
   static const String splashScreen = '/splash';
   static const String homeScreen = '/home';
   static const String contactUsScreen = '/contactUs';
+  static const String productsScreen = '/products';
 
   // Generate routes
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -23,6 +25,8 @@ class AppRouter {
         return slideRoute(  const HomeScreen());
       case contactUsScreen:
         return fadeRoute(  const ContactUsScreen());
+      case productsScreen:
+        return fadeRoute(  const ProductsScreen());
 
       default:
         return MaterialPageRoute(

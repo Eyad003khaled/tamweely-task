@@ -1,10 +1,10 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tamweely_task/core/utils/app_assets.dart';
 import 'package:tamweely_task/core/utils/app_strings.dart';
-import 'package:tamweely_task/core/utils/app_text_styles.dart';
+import 'package:tamweely_task/core/widgets/custom_app_bar.dart';
 import 'package:tamweely_task/core/widgets/custom_button.dart';
 import 'package:tamweely_task/features/contact_us/presentation/widgets/custom_message_input_field.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,69 +21,54 @@ class ContactUsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(
+        title: AppStrings.contactUs,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
               left: AppDimensions.paddingSizeExtraLarge,
               right: AppDimensions.paddingSizeExtraLarge,
-              top: AppDimensions.paddingSizeTop),
+              top: AppDimensions.paddingSizeExtraLarge),
           child: Column(
             children: [
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: AppColors.defaultColor,
-                      size: 30,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                  SizedBox(width: ResponsiveHelper.dynamicWidth(context, 0.1)),
-                  Text(
-                    AppStrings.contactUs,
-                    style: AppTextStyles.manropeBoldstyle14.copyWith(
-                      fontSize: 28,
-                      color: AppColors.defaultColor,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: ResponsiveHelper.dynamicHeight(context, 0.04),
-              ),
               const ContactInfo(
                 iconPath: AppImages.iconsPhone,
                 text: AppStrings.phoneNumber,
                 isPhone: true,
               ),
               SizedBox(
-                height: ResponsiveHelper.dynamicHeight(context, 0.02),
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
               const ContactInfo(
                 iconPath: AppImages.iconsEmail,
                 text: AppStrings.email,
                 isPhone: false,
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+              ),
               CustomUserInputField(
                 hinttext: AppStrings.name,
                 controller: TextEditingController(),
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+              ),
               CustomUserInputField(
                 hinttext: AppStrings.phone,
                 controller: TextEditingController(),
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+              ),
               CustomMessageInputField(
                 hinttext: AppStrings.message,
                 controller: TextEditingController(),
               ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+              ),
               CustomButton(
                 text: AppStrings.send,
                 width: 170,

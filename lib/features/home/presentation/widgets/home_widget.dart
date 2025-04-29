@@ -51,7 +51,11 @@ class HomeWidget extends StatelessWidget {
               child: CustomButton(
                   text: AppStrings.products,
                   icon: AppImages.iconsProduct,
-                  onPressed: () {}),
+                  onPressed: () {
+
+                    Navigator.pushNamed(context,AppRouter.productsScreen);
+
+                  }),
             ),
             SizedBox(
               height: ResponsiveHelper.dynamicHeight(context, 0.05),

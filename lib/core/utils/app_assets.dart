@@ -3,6 +3,7 @@ class AppImages {
   static const String _baseSvg = 'assets/images/svg/';
 
 static const String imagesAppLogo = '${_basePng}app_logo.png';
+static const String imagesPlacholderImage = '${_basePng}placeholder_image.png';
 
 
 
