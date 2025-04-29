@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         title,
         style: AppTextStyles.manropeBoldstyle14.copyWith(
-          fontSize: 28,
+          fontSize: 26,
           color: AppColors.defaultColor,
         ),
       ),

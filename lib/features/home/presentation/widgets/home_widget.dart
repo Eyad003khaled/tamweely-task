@@ -77,7 +77,10 @@ class HomeWidget extends StatelessWidget {
               child: CustomButton(
                   text: AppStrings.aboutCompany,
                   icon: AppImages.iconsCompany,
-                  onPressed: () {}),
+                  onPressed: () {
+
+                    Navigator.pushNamed(context,AppRouter.aboutCompanyScreen);
+                  }),
             ),
           ],
         ),

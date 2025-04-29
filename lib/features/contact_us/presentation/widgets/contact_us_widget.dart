@@ -114,7 +114,7 @@ class ContactUsWidget extends StatelessWidget {
             );
           }
         },
-        backgroundColor: AppColors.defaultColor,
+        backgroundColor: AppColors.defaultButton,
         child: SvgPicture.asset(
           AppImages.iconsWhatsapp,
           width: 24,

@@ -4,6 +4,7 @@ class AppImages {
 
 static const String imagesAppLogo = '${_basePng}app_logo.png';
 static const String imagesPlacholderImage = '${_basePng}placeholder_image.png';
+static const String imagesCompanyPoster = '${_basePng}company_poster.png';
 
 
 

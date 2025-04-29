@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:tamweely_task/features/about_company/presentation/screens/about_company_screen.dart';
 import 'package:tamweely_task/features/contact_us/presentation/screens/contact_us_screen.dart';
 import 'package:tamweely_task/features/products/presentation/screens/products_Screen.dart';
 
@@ -16,6 +17,7 @@ class AppRouter {
   static const String contactUsScreen = '/contactUs';
   static const String productsScreen = '/products';
   static const String submitComplaintScreen = '/submitComplaint';
+  static const String aboutCompanyScreen = '/aboutCompany';
 
   // Generate routes
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -31,6 +33,8 @@ class AppRouter {
         return fadeRoute(  const ProductsScreen());
       case submitComplaintScreen:
         return fadeRoute(  const SubmitComplaintScreen());
+      case aboutCompanyScreen:
+        return fadeRoute(  const AboutCompanyScreen());
 
       default:
         return MaterialPageRoute(

@@ -10,11 +10,11 @@ import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
 
 class CustomSubjectDropdown extends StatefulWidget {
-  final double width; // New width parameter
-  final double height; // New height parameter
-  final String Title; // Title parameter
-  final String hintText; // Hint text parameter
-  final TextEditingController? controller; // Optional controller to track selected subject
+  final double width; 
+  final double height; 
+  final String Title; 
+  final String hintText; 
+  final TextEditingController? controller; 
 
   const CustomSubjectDropdown({
     super.key,
@@ -22,7 +22,7 @@ class CustomSubjectDropdown extends StatefulWidget {
     this.height = 60.0,
     required this.Title,
     required this.hintText,
-    this.controller, // Pass controller as a parameter
+    this.controller, 
   });
 
   @override
@@ -63,7 +63,7 @@ class _CustomSubjectDropdownState extends State<CustomSubjectDropdown> {
           ),
         ),
         const SizedBox(height: 6),
-        // Wrapping DropdownButton2 in a Container for decoration
+        
         Container(
           width: widget.width,
           height: widget.height,
@@ -96,7 +96,7 @@ class _CustomSubjectDropdownState extends State<CustomSubjectDropdown> {
                   selectedSubject = value as String?; // Update selected subject
                 });
 
-                // Print the selected value
+                
                 if (kDebugMode) {
                   print("Selected subject: $selectedSubject");
                 }
@@ -108,8 +108,8 @@ class _CustomSubjectDropdownState extends State<CustomSubjectDropdown> {
               },
               iconStyleData: const IconStyleData(
                 icon: Icon(
-                  Icons.keyboard_arrow_down, // Customize this icon if needed
-                  color: AppColors.defaultButton, // Set your preferred color
+                  Icons.keyboard_arrow_down, 
+                  color: AppColors.defaultButton, 
                 ),
                 iconSize: 30,
               ),
@@ -128,7 +128,7 @@ class _CustomSubjectDropdownState extends State<CustomSubjectDropdown> {
           style: AppTextStyles.manropeRegularstyle14.copyWith(
             color: AppColors.textColor,
           ),
-        ), // Text style for dropdown items
+        ), 
         const SizedBox(width: 8),
       ],
     );
