@@ -30,23 +30,44 @@ class ContactUsWidget extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              Text(
-                AppStrings.contactUs,
-                style: AppTextStyles.manropeBoldstyle14.copyWith(
-                  fontSize: 28,
-                  color: AppColors.defaultColor,
-                ),
+              Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: AppColors.defaultColor,
+                      size: 30,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  SizedBox(width: ResponsiveHelper.dynamicWidth(context, 0.1)),
+                  Text(
+                    AppStrings.contactUs,
+                    style: AppTextStyles.manropeBoldstyle14.copyWith(
+                      fontSize: 28,
+                      color: AppColors.defaultColor,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.04),
               ),
               const ContactInfo(
-                  iconPath: AppImages.iconsPhone, text: AppStrings.phoneNumber,isPhone: true,),
+                iconPath: AppImages.iconsPhone,
+                text: AppStrings.phoneNumber,
+                isPhone: true,
+              ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.02),
               ),
               const ContactInfo(
-                  iconPath: AppImages.iconsEmail, text: AppStrings.email,isPhone: false,),
+                iconPath: AppImages.iconsEmail,
+                text: AppStrings.email,
+                isPhone: false,
+              ),
               const SizedBox(height: 20),
               CustomUserInputField(
                 hinttext: AppStrings.name,
@@ -75,8 +96,8 @@ class ContactUsWidget extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          final Uri whatsappUrl =
-              Uri.parse("https://wa.me/201234567890"); //Replace with Actual Phone Number
+          final Uri whatsappUrl = Uri.parse(
+              "https://wa.me/201234567890"); //Replace with Actual Phone Number
 
           if (await canLaunchUrl(whatsappUrl)) {
             await launchUrl(
@@ -92,7 +113,7 @@ class ContactUsWidget extends StatelessWidget {
         },
         backgroundColor: AppColors.defaultColor,
         child: SvgPicture.asset(
-          AppImages.iconsWhatsapp, 
+          AppImages.iconsWhatsapp,
           width: 24,
           height: 24,
           color: Colors.white,
@@ -101,4 +122,3 @@ class ContactUsWidget extends StatelessWidget {
     );
   }
 }
-
