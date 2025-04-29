@@ -11,5 +11,9 @@ static const String iconsProduct = '${_baseSvg}product.svg';
 static const String iconsComplain = '${_baseSvg}complain.svg';
 static const String iconsCompany = '${_baseSvg}company.svg';
 
+static const String iconsPhone = '${_baseSvg}phone.svg';
+static const String iconsEmail = '${_baseSvg}email.svg';
+static const String iconsWhatsapp = '${_baseSvg}whatsapp.svg';
+
 
 }

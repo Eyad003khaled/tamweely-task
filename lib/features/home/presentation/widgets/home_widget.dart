@@ -4,6 +4,7 @@ import 'package:tamweely_task/core/utils/app_assets.dart';
 import 'package:tamweely_task/core/utils/app_strings.dart';
 import 'package:tamweely_task/core/widgets/custom_button.dart';
 
+import '../../../../core/routes/app_router.dart';
 import '../../../../core/services/responsive_helper.dart';
 import '../../../../core/utils/app_dimensions.dart';
 
@@ -37,7 +38,11 @@ class HomeWidget extends StatelessWidget {
               child: CustomButton(
                   text: AppStrings.contactUs,
                   icon: AppImages.iconsContactUs,
-                  onPressed: () {}),
+                  onPressed: () {
+
+               Navigator.pushNamed(context,AppRouter.contactUsScreen);
+
+                  }),
             ),
             SizedBox(
               height: ResponsiveHelper.dynamicHeight(context, 0.05),

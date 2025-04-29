@@ -14,20 +14,22 @@ class CustomButton extends StatelessWidget {
 
   final bool isLoading;
   final String? icon;
+  final double? width;
+  final double? height;
 
   const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.isLoading = false,
-    this.icon,
+    this.icon, this.width, this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 56,
+      width:width ?? double.infinity,
+      height: height ?? 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.defaultButton,
@@ -42,11 +44,14 @@ class CustomButton extends StatelessWidget {
               )
             : Padding(
                 padding: const EdgeInsets.only(
-                  left: 40.0,
-                  right: 30.0,
+                  left: 35.0,
+                  right: 35.0,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: icon != null
+                      ? MainAxisAlignment.spaceBetween
+                      : MainAxisAlignment.center,
+                  
                   children: [
                     Text(
                       text,
