@@ -62,9 +62,13 @@ class HomeWidget extends StatelessWidget {
             ),
             FadeInRight(
               child: CustomButton(
-                  text: AppStrings.submitComplain,
-                  icon: AppImages.iconsComplain,
-                  onPressed: () {}),
+                  text: AppStrings.submitComplaint,
+                  icon: AppImages.iconsComplaint,
+                  onPressed: () {
+
+
+                    Navigator.pushNamed(context,AppRouter.submitComplaintScreen);
+                  }),
             ),
             SizedBox(
               height: ResponsiveHelper.dynamicHeight(context, 0.05),

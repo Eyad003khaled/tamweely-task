@@ -8,33 +8,41 @@ import '../../../../core/utils/app_colors.dart';
 class CustomUserInputField extends StatelessWidget {
   const CustomUserInputField(
       {super.key,
-      required this.hinttext,
-      required this.controller, this.keyboardType = TextInputType.text, this.maxLength, this.inputFormatters});
-  final String hinttext;
+      required this.title,
+      required this.hintText,
+      required this.controller,
+      this.keyboardType = TextInputType.text,
+      this.maxLength,
+      this.inputFormatters});
+  final String title;
+  final String hintText;
   final TextEditingController? controller;
-    final TextInputType? keyboardType;
-  final int? maxLength;  // Add maxLength as a parameter
+  final TextInputType? keyboardType;
+  final int? maxLength;
   final List<TextInputFormatter>? inputFormatters;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
+        Text(title, style: AppTextStyles.manropeBoldstyle14.copyWith(
+            color: AppColors.defaultColor,
+            fontSize: 16
+          ),),
+        SizedBox(height: ResponsiveHelper.dynamicHeight(context, 0.0075)),
         TextFormField(
           keyboardType: keyboardType,
           maxLength: maxLength,
           inputFormatters: inputFormatters,
           controller: controller,
           decoration: InputDecoration(
-            hintText: hinttext,
+            hintText: hintText,
             hintStyle: const TextStyle(color: AppColors.defaultColor),
             filled: true,
             fillColor: AppColors.white,
             contentPadding: EdgeInsets.symmetric(
                 vertical: ResponsiveHelper.dynamicHeight(context, 0.015),
-                horizontal:
-                    ResponsiveHelper.dynamicHeight(context, 0.017)),
+                horizontal: ResponsiveHelper.dynamicHeight(context, 0.017)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
                 borderSide: const BorderSide(
@@ -52,7 +60,7 @@ class CustomUserInputField extends StatelessWidget {
             ),
           ),
           style: AppTextStyles.manropeRegularstyle14
-              .copyWith(color: AppColors.textColor,fontSize: 16),
+              .copyWith(color: AppColors.textColor, fontSize: 16),
         ),
       ],
     );

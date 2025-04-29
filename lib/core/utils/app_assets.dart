@@ -9,7 +9,7 @@ static const String imagesPlacholderImage = '${_basePng}placeholder_image.png';
 
 static const String iconsContactUs = '${_baseSvg}contact_us.svg';
 static const String iconsProduct = '${_baseSvg}product.svg';
-static const String iconsComplain = '${_baseSvg}complain.svg';
+static const String iconsComplaint = '${_baseSvg}complain.svg';
 static const String iconsCompany = '${_baseSvg}company.svg';
 
 static const String iconsPhone = '${_baseSvg}phone.svg';

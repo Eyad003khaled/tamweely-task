@@ -1,12 +1,13 @@
 // ignore_for_file: deprecated_member_use, use_build_context_synchronously
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tamweely_task/core/utils/app_assets.dart';
 import 'package:tamweely_task/core/utils/app_strings.dart';
 import 'package:tamweely_task/core/widgets/custom_app_bar.dart';
 import 'package:tamweely_task/core/widgets/custom_button.dart';
-import 'package:tamweely_task/features/contact_us/presentation/widgets/custom_message_input_field.dart';
+import 'package:tamweely_task/core/widgets/custom_message_input_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/services/responsive_helper.dart';
@@ -32,48 +33,65 @@ class ContactUsWidget extends StatelessWidget {
               top: AppDimensions.paddingSizeExtraLarge),
           child: Column(
             children: [
-              const ContactInfo(
-                iconPath: AppImages.iconsPhone,
-                text: AppStrings.phoneNumber,
-                isPhone: true,
+              FadeInLeft(
+                child: const ContactInfo(
+                  iconPath: AppImages.iconsPhone,
+                  text: AppStrings.phoneNumber,
+                  isPhone: true,
+                ),
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
-              const ContactInfo(
-                iconPath: AppImages.iconsEmail,
-                text: AppStrings.email,
-                isPhone: false,
+              FadeInRight(
+                child: const ContactInfo(
+                  iconPath: AppImages.iconsEmail,
+                  text: AppStrings.email,
+                  isPhone: false,
+                ),
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
-              CustomUserInputField(
-                hinttext: AppStrings.name,
-                controller: TextEditingController(),
+              FadeInLeft(
+                child: CustomUserInputField(
+                  title: AppStrings.name,
+                  hintText: AppStrings.enterName,
+                  keyboardType: TextInputType.name,
+                  controller: TextEditingController(),
+                ),
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
-              CustomUserInputField(
-                hinttext: AppStrings.phone,
-                controller: TextEditingController(),
+              FadeInRight(
+                child: CustomUserInputField(
+                  title: AppStrings.phone,
+                  hintText: AppStrings.enterPhone,
+                  keyboardType: TextInputType.phone,
+                  controller: TextEditingController(),
+                ),
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
-              CustomMessageInputField(
-                hinttext: AppStrings.message,
-                controller: TextEditingController(),
+              FadeInLeft(
+                child: CustomMessageInputField(
+                  title: AppStrings.message,
+                  hinttext: AppStrings.enterMessage,
+                  controller: TextEditingController(),
+                ),
               ),
               SizedBox(
                 height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
-              CustomButton(
-                text: AppStrings.send,
-                width: 170,
-                height: 50,
-                onPressed: () {},
+              FadeInUp(
+                child: CustomButton(
+                  text: AppStrings.send,
+                  width: 170,
+                  height: 50,
+                  onPressed: () {},
+                ),
               ),
             ],
           ),

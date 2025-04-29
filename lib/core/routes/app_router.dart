@@ -6,6 +6,7 @@ import 'package:tamweely_task/features/products/presentation/screens/products_Sc
 
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
+import '../../features/submit_complaint/presentation/screens/submit_complaint_screen.dart';
 import '../functions/animations/animation.dart';
 
 class AppRouter {
@@ -14,6 +15,7 @@ class AppRouter {
   static const String homeScreen = '/home';
   static const String contactUsScreen = '/contactUs';
   static const String productsScreen = '/products';
+  static const String submitComplaintScreen = '/submitComplaint';
 
   // Generate routes
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -27,6 +29,8 @@ class AppRouter {
         return fadeRoute(  const ContactUsScreen());
       case productsScreen:
         return fadeRoute(  const ProductsScreen());
+      case submitComplaintScreen:
+        return fadeRoute(  const SubmitComplaintScreen());
 
       default:
         return MaterialPageRoute(
