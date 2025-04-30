@@ -13,6 +13,11 @@ abstract class AppStrings {
    message = "Message",
    enterMessage = "Enter Your Message",
    send = "Send",
+   contactUsErrorTitle = "Missing Information",
+   contactUsErrorSubtitle = "Please fill in all the fields.",
+   contactUsSuccessTitle = "Success!",
+   contactUsSuccessSubtitle = "We received your contact request.",
+  
 
   //!Products
    products = "Products",
