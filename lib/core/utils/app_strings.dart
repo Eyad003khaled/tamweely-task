@@ -1,6 +1,12 @@
 abstract class AppStrings {
   static const String appName = "Tamweely",
 
+  //! No Internet Connection
+    noInternetTitle = "No Internet Connection",
+    noInternetSubtitle = "Please check your internet connection",
+    shortPlaceholder = "Tamweeeeely",
+    longPlaceholder = "Tamweeeeely            Tamweeeely                  Tamweeely        ",
+
 
   //!Contact Us
    contactUs = "Contact Us",
@@ -21,6 +27,7 @@ abstract class AppStrings {
 
   //!Products
    products = "Products",
+   more = "More",
 
   //!Submit Complaint
    submitComplaint = "Submit Complaint",
