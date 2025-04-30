@@ -11,6 +11,8 @@ import 'package:tamweely_task/core/widgets/custom_button.dart';
 import 'package:tamweely_task/core/widgets/custom_message_input_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../connection/network_info.dart';
+import '../../../../core/services/injection.dart';
 import '../../../../core/services/responsive_helper.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_dimensions.dart';
@@ -38,6 +40,18 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
     final name = nameController.text.trim();
     final phone = phoneController.text.trim();
     final message = messageController.text.trim();
+
+    final isConnected = await getIt<NetworkInfo>().isConnected;
+
+    if (!isConnected!) {
+      setState(() {
+        isLoading = false;
+      });
+      showToast(
+          false, AppStrings.noInternetTitle, AppStrings.noInternetSubtitle);
+      return;
+    }
+
 
     if (name.isEmpty || phone.isEmpty || message.isEmpty) {
       await Future.delayed(const Duration(seconds: 1));
