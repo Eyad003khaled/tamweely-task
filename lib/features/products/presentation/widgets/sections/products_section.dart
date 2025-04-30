@@ -13,8 +13,8 @@ class ProductsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(title: AppStrings.products),
+    return const Scaffold(
+      appBar: CustomAppBar(title: AppStrings.products),
       body:ProductsCard()
     );
   }

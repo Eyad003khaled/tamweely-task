@@ -3,20 +3,22 @@
 import 'package:flutter/material.dart';
 import 'package:tamweely_task/core/utils/app_text_styles.dart';
 import 'package:tamweely_task/core/widgets/custom_button.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_dimensions.dart';
-
-
-
+import '../../../../../core/utils/app_strings.dart';
+import '../product_description_sheet.dart';
 
 class CustomProductsListViewItem extends StatelessWidget {
+  final String productName;
+  final String imagePath;
+  final String productDescrption;
+
   const CustomProductsListViewItem({
     super.key,
-    required this.product,
+    required this.productName,
+    required this.productDescrption,
+    required this.imagePath,
   });
-
-  final Map<String, String> product;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomProductsListViewItem extends StatelessWidget {
       height: 180,
       width: 150,
       child: Card(
-          color: AppColors.white,
+        color: AppColors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
           side: const BorderSide(
@@ -39,14 +41,17 @@ class CustomProductsListViewItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Image placeholder
-              ClipRect(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                clipBehavior: Clip.antiAlias,
                 child: Image.asset(
-                  product['image']!,
+                  imagePath,
                   width: 90,
-                  height: 92,
+                  height: 110,
                   fit: BoxFit.fill,
                 ),
               ),
+
               const SizedBox(width: 12),
               // Product details
               Expanded(
@@ -57,31 +62,44 @@ class CustomProductsListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 25,
                     ),
-                    Text(product['title']!,
+                    Text(productName,
                         style: AppTextStyles.manropeBoldstyle14.copyWith(
-                          color: AppColors.defaultColor,
-                          fontSize: AppDimensions.fontSizeLarge16)),
+                            color: AppColors.defaultColor,
+                            fontSize: AppDimensions.fontSizeLarge16)),
                     const SizedBox(height: 4),
                     Text(
-                      product['description']!,
+                      productDescrption,
                       style: AppTextStyles.manropeMediumstyle14.copyWith(
                         color: AppColors.textColor,
-                        ),
+                      ),
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
-                   const Spacer(),
+                    const Spacer(),
                     Align(
                         alignment: Alignment.bottomRight,
                         child: CustomButton(
-                            text: "More",
-                            width: 100,
-                            height: 30,
-                            onPressed: () {})),
+                          text: AppStrings.more,
+                          width: 100,
+                          height: 30,
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(20)),
+                              ),
+                              isScrollControlled: true,
+                              builder: (context) => ProductDescriptionSheet(
+                                productName: productName,
+                                productDescription: productDescrption,
+                              ),
+                            );
+                          },
+                        )),
                   ],
                 ),
               ),
-              
             ],
           ),
         ),
