@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.white,
+      scrolledUnderElevation: 0,
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back,
@@ -30,7 +31,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: AppColors.defaultColor,
         ),
       ),
-      
       centerTitle: true,
     );
   }

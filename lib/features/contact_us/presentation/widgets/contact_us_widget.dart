@@ -83,21 +83,26 @@ class ContactUsWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+                height: ResponsiveHelper.dynamicHeight(context, 0.02),
               ),
               FadeInUp(
                 child: CustomButton(
                   text: AppStrings.send,
                   width: 170,
                   height: 50,
+                  
                   onPressed: () {},
                 ),
+              ),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
               ),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        isExtended: true,
         onPressed: () async {
           final Uri whatsappUrl = Uri.parse(
               "https://wa.me/201234567890"); //Replace with Actual Phone Number

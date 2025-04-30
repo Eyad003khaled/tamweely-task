@@ -76,6 +76,9 @@ class SubmitComplaintWidget extends StatelessWidget {
                   onPressed: () {},
                 ),
               ),
+              SizedBox(
+                height: ResponsiveHelper.dynamicHeight(context, 0.03),
+              ),
             ],
           ),
         ),

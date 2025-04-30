@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:tamweely_task/core/utils/app_text_styles.dart';
 import 'package:tamweely_task/core/widgets/custom_button.dart';
 
-import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_dimensions.dart';
 
@@ -33,7 +32,6 @@ class CustomProductsListViewItem extends StatelessWidget {
             width: 2,
           ),
         ),
-        //  margin: const EdgeInsets.symmetric(vertical: 6),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Row(
@@ -43,7 +41,7 @@ class CustomProductsListViewItem extends StatelessWidget {
               // Image placeholder
               ClipRect(
                 child: Image.asset(
-                  AppImages.imagesPlacholderImage,
+                  product['image']!,
                   width: 90,
                   height: 92,
                   fit: BoxFit.fill,
@@ -80,7 +78,6 @@ class CustomProductsListViewItem extends StatelessWidget {
                             width: 100,
                             height: 30,
                             onPressed: () {})),
-                          //  Spacer()
                   ],
                 ),
               ),

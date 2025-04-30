@@ -16,6 +16,7 @@ class AboutCompanyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      
       appBar: const CustomAppBar(title: AppStrings.aboutCompany),
       body: SingleChildScrollView(
         child: Padding(

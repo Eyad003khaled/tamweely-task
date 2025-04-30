@@ -66,7 +66,7 @@ class CustomMessageInputField extends StatelessWidget {
             ),
           ),
           style: AppTextStyles.manropeRegularstyle14
-              .copyWith(color: AppColors.textColor),
+              .copyWith(color: AppColors.textColor,fontSize: 16),
           textAlignVertical: TextAlignVertical.top,
         ),
       ],
