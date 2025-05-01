@@ -17,7 +17,7 @@ class AllProductsModel  {
   factory AllProductsModel.fromJson(Map<String, dynamic> json) {
     return AllProductsModel(
       products: (json[ApiKey.products] as List<dynamic>)
-          .map((order) => ProductsDetails.fromJson(order))
+          .map((product) => ProductsDetails.fromJson(product))
           .toList(),
       message: json[ApiKey.message],
       status: json[ApiKey.status],

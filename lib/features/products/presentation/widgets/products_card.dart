@@ -31,7 +31,7 @@ class ProductsCard extends StatelessWidget {
                 BlocProvider.of<ProductsCubit>(context).fetchAllProducts(),
           );
         } else if (state is GetProductsSuccessState) {
-          return buildProductssList(
+          return buildProductsList(
             allProductsName: state.products.map((c) => c.productName).toList(),
             allProductsDescription:
                 state.products.map((c) => c.productDescription).toList(),
@@ -45,7 +45,7 @@ class ProductsCard extends StatelessWidget {
     );
   }
 
-  Widget buildProductssList({
+  Widget buildProductsList({
     required List<String> allProductsName,
     required List<String> allProductsDescription,
     required BuildContext context,

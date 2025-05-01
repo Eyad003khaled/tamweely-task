@@ -37,20 +37,20 @@ class ProductsRepositoryImpl implements ProductsRepository {
         final allProductsModel = await productsRemoteDataSource.getAllProducts();
 
         // Map the `products` list from `Data` into a list of `ProductsEntity`
-        final broducts = allProductsModel.products.map((brand) {
+        final products = allProductsModel.products.map((product) {
           return ProductsEntity(
-            productName: brand.productName,
-            productDescription: brand.productDescription,
+            productName: product.productName,
+            productDescription: product.productDescription,
             // Add other properties as needed
           );
         }).toList();
         // Cache the products locally
-        localDataSource.cacheProducts(broducts);
+        localDataSource.cacheProducts(products);
 
         // Mark that the data has been fetched remotely
         _isDataFetchedOnce = true;
 
-        return Right(broducts);
+        return Right(products);
       } else {
         // Retrieve data from the local data source
         final localProducts = await localDataSource.getLastProducts();

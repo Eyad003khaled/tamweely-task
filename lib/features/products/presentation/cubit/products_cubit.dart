@@ -3,7 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
+import '../../../../core/functions/toast/custom_toast.dart';
 import '../../../../core/services/injection.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../domain/entities/products_entity.dart';
 import '../../domain/usecases/get_all_products_usecase.dart';
 
@@ -29,8 +31,8 @@ class ProductsCubit extends Cubit<ProductsState> {
     }
   }
     void _handleFailure(dynamic failure) {
-    // showToast(false, tr(AppStrings.noInternetTitle),
-    //     tr(AppStrings.noInternetSubtitle));
+    showToast(false, AppStrings.noInternetTitle,
+      AppStrings.noInternetSubtitle);
     emit(GetProductsFailureState(error: failure.errMessage));
     if (kDebugMode) {
       print(failure.errMessage);
